@@ -1,0 +1,12 @@
+{
+  "name": "cordova-plugin-huella-milagros",
+  "version": "1.0.0",
+  "description": "Plugin de huella digital para OutSystems",
+  "cordova": {
+    "id": "com.milagros.fingerprint",
+    "platforms": ["android"]
+  },
+  "keywords": ["cordova", "fingerprint", "biometric", "plugin"],
+  "author": "Milagros Huerta",
+  "license": "MIT"
+}
