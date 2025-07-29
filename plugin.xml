@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.milagros.fingerprint" version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>FingerprintPlugin</name>
+  <js-module name="FingerprintPlugin" src="www/fingerprint.js">
+    <clobbers target="FingerprintPlugin"/>
+  </js-module>
+  <platform name="android">
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="FingerprintPlugin">
+        <param name="android-package" value="com.tuempresa.fingerprint.FingerprintPlugin"/>
+      </feature>
+    </config-file>
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
+      <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    </config-file>
+    <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java"
+                 target-dir="src/com/tuempresa/fingerprint"/>
+    <resource-file src="src/android/com/tuempresa/fingerprint/libs/finger-7.0.1.aar"
+                   target="libs/finger-7.0.1.aar"/>
+    <framework src="build.gradle" custom="true" type="gradleReference"/>
+  </platform>
+</plugin>

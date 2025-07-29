@@ -1,0 +1,14 @@
+repositories {
+    flatDir {
+        dirs 'src/android/com/tuempresa/fingerprint/libs'
+    }
+}
+dependencies {
+    implementation(name: 'finger-7.0.1', ext: 'aar')
+}
+android {
+    packagingOptions {
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
