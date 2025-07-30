@@ -1,6 +1,6 @@
 package com.fingerprint;
 
-//import com.touchlessid.TouchLessIDSDK;
+import com.touchlessid.TouchLessIDSDK;
 
 import android.content.Context;
 import android.util.Log;
