@@ -1,12 +1,19 @@
 {
-  "name": "cordova-plugin-huella-milagros",
+  "name": "cordova-plugin-huella",
   "version": "1.0.0",
-  "description": "Plugin de huella digital para OutSystems",
+  "description": "Plugin Cordova personalizado para autenticación con huella usando archivo AAR",
   "cordova": {
-    "id": "com.milagros.fingerprint",
-    "platforms": ["android"]
+    "id": "cordova-plugin-huella",
+    "platforms": [
+      "android"
+    ]
   },
-  "keywords": ["cordova", "fingerprint", "biometric", "plugin"],
-  "author": "Milagros Huerta",
+  "keywords": [
+    "cordova",
+    "fingerprint",
+    "biometric",
+    "plugin"
+  ],
+  "author": "Milagros & Victor",
   "license": "MIT"
 }
