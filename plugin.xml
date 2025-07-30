@@ -36,7 +36,7 @@
     <!-- Librería AAR sin target-dir -->
     <lib-file src="src/android/app/libs/finger-7.0.1.aar" />
           
-   <framework src="src/android/packaging.gradle" custom="true" type="gradleReference" />
+   <framework src="src/android/app/packaging.gradle" custom="true" type="gradleReference" />
 
     <!-- ⚠ Elimina esta línea si no es estrictamente necesaria -->
     <!-- <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/> -->
