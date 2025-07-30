@@ -23,7 +23,7 @@
     </config-file>
 
     <!-- AAR y clase Java -->
-    <framework src="src/android/libs/finger-7.0.1.aar" custom="true" />
+    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="src/android/libs" />
     <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/com/tuempresa/fingerprint" />
   </platform>
 </plugin>
