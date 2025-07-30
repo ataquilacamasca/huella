@@ -1,12 +1,10 @@
 {
-  "name": "cordova-plugin-huella",
+  "name": "cordova-plugin-fingerprint",
   "version": "1.0.0",
   "description": "Plugin Cordova personalizado para autenticación con huella usando archivo AAR",
   "cordova": {
-    "id": "cordova-plugin-huella",
-    "platforms": [
-      "android"
-    ]
+    "id": "cordova-plugin-fingerprint",
+    "platforms": ["android"]
   },
   "keywords": [
     "cordova",

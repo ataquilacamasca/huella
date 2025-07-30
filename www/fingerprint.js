@@ -4,7 +4,6 @@ var FingerprintPlugin = {
   autenticar: function (successCallback, errorCallback) {
     exec(
       function (result) {
-        // Convierte el resultado JSON de string a objeto si es necesario
         if (typeof result === "string") {
           try {
             result = JSON.parse(result);
@@ -12,7 +11,6 @@ var FingerprintPlugin = {
             return errorCallback("Error al parsear respuesta: " + e.message);
           }
         }
-
         successCallback(result);
       },
       function (err) {
