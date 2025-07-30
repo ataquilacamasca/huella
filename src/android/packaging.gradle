@@ -10,7 +10,7 @@ dependencies {
 }
 
 ext {
-    apply from: 'cordova.gradle'    
+    apply from: 'packaging.gradle'    
 }
 
 android {

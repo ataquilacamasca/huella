@@ -32,13 +32,12 @@
      android:label="OutSystems App"
      tools:replace="android:label" />
      </config-file>
-     
+
     <!-- Archivos fuente -->
     <source-file src="src/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
     <!-- Librería AAR -->
-    <lib-file src="src/android/libs/finger-7.0.1.aar" />
-
+    <framework src="src/android/libs/finger-7.0.1.aar" custom="true" type="aar" target-dir="app/libs"/>
     <!-- Referencia al archivo Gradle personalizado -->
     <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/>
   </platform>
