@@ -1,6 +1,6 @@
 repositories {
     flatDir {
-        dirs 'src/android/app/libs' // Ajustamos a donde realmente está tu .aar
+       dirs project.file('src/android/app/libs')
     }
 }
 
