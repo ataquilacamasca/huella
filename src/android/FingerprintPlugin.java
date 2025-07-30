@@ -1,4 +1,4 @@
-package com.tuempresa.fingerprint;
+package com.fingerprint;
 
 import android.content.Context;
 import android.util.Log;

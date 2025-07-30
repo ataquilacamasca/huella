@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-fingerprintcustom" version="1.0.0">
+        id="cordova-plugin-fingerprintplugin"
+        version="1.0.0">
 
   <name>FingerprintPlugin</name>
-  <description>Plugin de huella digital personalizado</description>
+  <description>Plugin de huella para OutSystems</description>
   <license>MIT</license>
 
-  <engines>
-    <engine name="cordova" version=">=11.0.0"/>
-  </engines>
-
-  <js-module src="www/fingerprint.js" name="Fingerprint">
+  <js-module src="www/fingerprint.js" name="FingerprintPlugin">
     <clobbers target="window.plugins.fingerprint" />
   </js-module>
 
   <platform name="android">
-    <!-- Registra el plugin -->
+    <!-- Declaración en config.xml -->
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="FingerprintPlugin">
-        <param name="android-package" value="com.tuempresa.fingerprint.FingerprintPlugin"/>
+        <param name="android-package" value="com.fingerprint.plugin.FingerprintPlugin"/>
       </feature>
     </config-file>
 
-    <!-- Permisos requeridos -->
+    <!-- Permisos necesarios -->
     <config-file target="AndroidManifest.xml" parent="/manifest">
+      <uses-permission android:name="android.permission.INTERNET" />
       <uses-permission android:name="android.permission.CAMERA" />
-      <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-      <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     </config-file>
 
-    <!-- AAR y clases Java -->
-    <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/com/tuempresa/fingerprint"/>
-    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="libs"/>
-    <framework src="src/android/libs/finger-7.0.1.aar" custom="true" />
+    <!-- Archivos fuente -->
+    <source-file src="src/android/libs/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
-    <!-- (Opcional) si usas estilos personalizados -->
-    <!-- <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml"/> -->
+    <!-- Librería AAR -->
+    <lib-file src="src/android/libs/finger-7.0.1.aar" />
 
+    <!-- Referencia al archivo Gradle personalizado -->
+    <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/>
   </platform>
 </plugin>
