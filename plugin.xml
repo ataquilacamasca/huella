@@ -31,10 +31,10 @@
                 tools:replace="android:label" />
             </config-file>
  -->
-    <source-file src="src/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
+    <source-file src="src/app/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
     <!-- Librería AAR sin target-dir -->
-    <lib-file src="src/android/libs/finger-7.0.1.aar" />
+    <lib-file src="src/app/android/libs/finger-7.0.1.aar" />
 
     <!-- ⚠ Elimina esta línea si no es estrictamente necesaria -->
     <!-- <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/> -->
