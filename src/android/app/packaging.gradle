@@ -1,6 +1,6 @@
 repositories {
     flatDir {
-        dirs 'src/android/libs' // Ajustamos a donde realmente está tu .aar
+        dirs 'src/android/app/libs' // Ajustamos a donde realmente está tu .aar
     }
 }
 
@@ -12,6 +12,7 @@ dependencies {
 ext {
     apply from: 'packaging.gradle'    
 }
+
 
 android {
     compileSdkVersion 33
