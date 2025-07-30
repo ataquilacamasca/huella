@@ -4,6 +4,7 @@ repositories {
     }
 }
 
+
 dependencies {
     implementation(name: 'finger-7.0.1', ext: 'aar')
 }
@@ -14,5 +15,10 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/NOTICE'
         exclude '**/kotlin/**'
+        pickFirst 'lib/armeabi-v7a/libTouchlessID.so'
+        pickFirst 'lib/arm64-v8a/libTouchlessID.so'
+        pickFirst 'lib/x86/libTouchlessID.so'
+        pickFirst 'lib/x86_64/libTouchlessID.so'
+
     }
 }
