@@ -9,7 +9,15 @@ dependencies {
     implementation(name: 'finger-7.0.1', ext: 'aar')
 }
 
+ext {
+    apply from: 'cordova.gradle'    
+}
+
 android {
+    compileSdkVersion 33
+    defaultConfig {
+        targetSdkVersion 33
+    }
     packagingOptions {
         exclude 'META-INF/INDEX.LIST'
         exclude 'META-INF/LICENSE'
