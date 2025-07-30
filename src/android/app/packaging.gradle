@@ -9,10 +9,6 @@ dependencies {
     implementation(name: 'finger-7.0.1', ext: 'aar')
 }
 
-ext {
-    apply from: 'packaging.gradle'    
-}
-
 
 android {
     compileSdkVersion 33
