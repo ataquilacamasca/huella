@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         id="cordova-plugin-fingerprintplugin"
         version="1.0.0">
@@ -23,10 +23,22 @@
       <uses-permission android:name="android.permission.CAMERA" />
     </config-file>
 
+   <!--
+          <config-file target="AndroidManifest.xml" parent="application">
+              <application
+                xmlns:tools="http://schemas.android.com/tools"
+                android:label="OutSystems App"
+                tools:replace="android:label" />
+            </config-file>
+ -->
     <source-file src="src/android/app/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
-    <!-- ✅ Inclusión correcta del archivo AAR -->
-    <framework src="src/android/app/libs/finger-7.0.1.aar" custom="true" />
+    <!-- Librería AAR sin target-dir -->
+    <lib-file src="src/android/app/libs/finger-7.0.1.aar" />
+          
+
+    <!-- ⚠ Elimina esta línea si no es estrictamente necesaria -->
+    <!-- <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/> -->
 
   </platform>
 </plugin>
