@@ -1,5 +1,7 @@
 package com.fingerprint;
 
+//import com.touchlessid.TouchLessIDSDK;
+
 import android.content.Context;
 import android.util.Log;
 
@@ -8,9 +10,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.touchlessid.FingerprintSDK;
 
-//<!--import com.touchlessid.TouchLessIDSDK;-->
 
 public class FingerprintPlugin extends CordovaPlugin {
 
