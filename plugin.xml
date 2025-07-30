@@ -33,10 +33,9 @@
  -->
     <source-file src="src/android/app/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
-    <!-- Librería AAR sin target-dir <lib-file src="src/android/app/libs/finger-7.0.1.aar" /> -->
+    <!-- Librería AAR sin target-dir-->
+<lib-file src="src/android/app/libs/finger-7.0.1.aar" />
 
-    <!-- ✅ Inclusión correcta del archivo AAR -->
-    <framework src="src/android/app/libs/finger-7.0.1.aar" custom="true" />
 
     <!-- ⚠ Elimina esta línea si no es estrictamente necesaria -->
     <!-- <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/> -->
