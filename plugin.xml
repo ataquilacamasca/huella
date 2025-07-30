@@ -23,13 +23,14 @@
       <uses-permission android:name="android.permission.CAMERA" />
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="application">
-      <application
-        xmlns:tools="http://schemas.android.com/tools"
-        android:label="OutSystems App"
-        tools:replace="android:label" />
-    </config-file>
-
+   <!--
+          <config-file target="AndroidManifest.xml" parent="application">
+              <application
+                xmlns:tools="http://schemas.android.com/tools"
+                android:label="OutSystems App"
+                tools:replace="android:label" />
+            </config-file>
+ -->
     <source-file src="src/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
     <!-- Librería AAR sin target-dir -->
