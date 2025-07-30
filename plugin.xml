@@ -1,28 +1,40 @@
-<plugin id="cordova-plugin-fingerprint" version="1.0.0"
-    xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="cordova-plugin-fingerprint"
+        version="1.0.0"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
 
   <name>FingerprintPlugin</name>
 
+  <!-- Módulo JS expuesto a window.plugins.fingerprint -->
   <js-module src="www/fingerprint.js" name="Fingerprint">
-    <clobbers target="Fingerprint" />
+    <clobbers target="window.plugins.fingerprint" />
   </js-module>
 
+  <!-- Configuración Android -->
   <platform name="android">
+
+    <!-- Registro de la clase Java -->
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="FingerprintPlugin">
         <param name="android-package" value="com.tuempresa.fingerprint.FingerprintPlugin" />
       </feature>
     </config-file>
 
+    <!-- Permisos necesarios -->
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.USE_FINGERPRINT" />
       <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     </config-file>
 
+    <!-- Inclusión del AAR -->
     <framework src="src/android/libs/finger-7.0.1.aar" custom="true" />
-    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="src/android/libs" />
+    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="libs" />
+
+    <!-- Clase Java del plugin -->
     <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/android/com/tuempresa/fingerprint" />
+    
   </platform>
+
 </plugin>
