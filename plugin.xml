@@ -12,33 +12,31 @@
   </js-module>
 
   <platform name="android">
-    <!-- Declaración en config.xml -->
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="FingerprintPlugin">
         <param name="android-package" value="com.fingerprint.FingerprintPlugin"/>
       </feature>
     </config-file>
 
-    <!-- Permisos necesarios -->
     <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.INTERNET" />
       <uses-permission android:name="android.permission.CAMERA" />
     </config-file>
 
-    <!-- Solucion al conflicto de android:label -->
- <config-file target="AndroidManifest.xml" parent="application">
- <application
-     xmlns:tools="http://schemas.android.com/tools"
-     android:label="OutSystems App"
-     tools:replace="android:label" />
-     </config-file>
+    <config-file target="AndroidManifest.xml" parent="application">
+      <application
+        xmlns:tools="http://schemas.android.com/tools"
+        android:label="OutSystems App"
+        tools:replace="android:label" />
+    </config-file>
 
-    <!-- Archivos fuente -->
     <source-file src="src/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
-    <!-- Librería AAR -->
-    <framework src="src/android/libs/finger-7.0.1.aar" custom="true" type="aar" target-dir="app/libs"/>
-    <!-- Referencia al archivo Gradle personalizado -->
-    <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/>
+    <!-- Librería AAR sin target-dir -->
+    <framework src="src/android/libs/finger-7.0.1.aar" custom="true" type="aar"/>
+
+    <!-- ⚠ Elimina esta línea si no es estrictamente necesaria -->
+    <!-- <framework src="src/android/packaging.gradle" custom="true" type="gradleReference"/> -->
+
   </platform>
 </plugin>
