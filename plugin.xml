@@ -6,12 +6,12 @@
 
   <name>FingerprintPlugin</name>
 
-  <!-- Módulo JS expuesto a window.plugins.fingerprint -->
+  <!-- Módulo JS expuesto correctamente -->
   <js-module src="www/fingerprint.js" name="Fingerprint">
     <clobbers target="window.plugins.fingerprint" />
   </js-module>
 
-  <!-- Configuración Android -->
+  <!-- Configuración para Android -->
   <platform name="android">
 
     <!-- Registro de la clase Java -->
@@ -21,20 +21,18 @@
       </feature>
     </config-file>
 
-    <!-- Permisos necesarios -->
+    <!-- Permisos requeridos -->
     <config-file target="AndroidManifest.xml" parent="/*">
       <uses-permission android:name="android.permission.CAMERA" />
       <uses-permission android:name="android.permission.USE_FINGERPRINT" />
       <uses-permission android:name="android.permission.USE_BIOMETRIC" />
     </config-file>
 
-    <!-- Inclusión del AAR -->
+    <!-- AAR y clases Java -->
     <framework src="src/android/libs/finger-7.0.1.aar" custom="true" />
-    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="libs" />
-
-    <!-- Clase Java del plugin -->
+    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="src/android/libs" />
     <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/android/com/tuempresa/fingerprint" />
-    
+
   </platform>
 
 </plugin>
