@@ -1,38 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="cordova-plugin-fingerprint"
-        version="1.0.0"
-        xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-fingerprintcustom" version="1.0.0">
 
   <name>FingerprintPlugin</name>
+  <description>Plugin de huella digital personalizado</description>
+  <license>MIT</license>
 
-  <!-- Módulo JS expuesto correctamente -->
+  <engines>
+    <engine name="cordova" version=">=11.0.0"/>
+  </engines>
+
   <js-module src="www/fingerprint.js" name="Fingerprint">
     <clobbers target="window.plugins.fingerprint" />
   </js-module>
 
-  <!-- Configuración para Android -->
   <platform name="android">
-
-    <!-- Registro de la clase Java -->
+    <!-- Registra el plugin -->
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="FingerprintPlugin">
-        <param name="android-package" value="com.tuempresa.fingerprint.FingerprintPlugin" />
+        <param name="android-package" value="com.tuempresa.fingerprint.FingerprintPlugin"/>
       </feature>
     </config-file>
 
     <!-- Permisos requeridos -->
-    <config-file target="AndroidManifest.xml" parent="/*">
+    <config-file target="AndroidManifest.xml" parent="/manifest">
       <uses-permission android:name="android.permission.CAMERA" />
-      <uses-permission android:name="android.permission.USE_FINGERPRINT" />
       <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+      <uses-permission android:name="android.permission.USE_FINGERPRINT" />
     </config-file>
 
     <!-- AAR y clases Java -->
+    <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/com/tuempresa/fingerprint"/>
+    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="libs"/>
     <framework src="src/android/libs/finger-7.0.1.aar" custom="true" />
-    <source-file src="src/android/libs/finger-7.0.1.aar" target-dir="src/android/libs" />
-    <source-file src="src/android/com/tuempresa/fingerprint/FingerprintPlugin.java" target-dir="src/android/com/tuempresa/fingerprint" />
+
+    <!-- (Opcional) si usas estilos personalizados -->
+    <!-- <resource-file src="src/android/res/values/styles.xml" target="res/values/styles.xml"/> -->
 
   </platform>
-
 </plugin>
