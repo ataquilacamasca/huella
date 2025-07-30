@@ -26,7 +26,7 @@
     </config-file>
 
     <!-- Archivos fuente -->
-    <source-file src="src/android/libs/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
+    <source-file src="src/android/FingerprintPlugin.java" target-dir="src/com/fingerprint" />
 
     <!-- Librería AAR -->
     <lib-file src="src/android/libs/finger-7.0.1.aar" />
